@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Mango.Services.ProductAPI.Repository.IRepositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mango.Services.ProductAPI
@@ -41,6 +43,20 @@ namespace Mango.Services.ProductAPI
                 {
                     opts.UseSqlServer(connectionString);
                 });
+
+            #endregion
+
+            #region Repositories
+
+                services.AddScoped<IProductRepository, IProductRepository>();
+
+            #endregion
+
+            #region AutoMapper
+
+            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+                services.AddSingleton(mapper);
+                services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             #endregion
         }
