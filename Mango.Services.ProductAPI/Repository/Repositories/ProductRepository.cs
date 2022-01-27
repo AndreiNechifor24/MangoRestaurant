@@ -33,7 +33,7 @@ namespace Mango.Services.ProductAPI.Repository.Repositories
             return _mapper.Map<ProductDto>(product);
         }
 
-        public async Task<ProductDto> CreateUpdateProduc(ProductDto model)
+        public async Task<ProductDto> CreateUpdateProduct(ProductDto model)
         {
             var product = _mapper.Map<ProductDto, Product>(model);
 

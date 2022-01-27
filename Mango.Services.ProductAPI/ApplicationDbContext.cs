@@ -17,9 +17,51 @@ namespace Mango.Services.ProductAPI
         #region DBSets
 
             public DbSet<Product> Products { get; set; }
-            public DbSet<Category> ProductCategories { get; set; }
 
-        #endregion
+            #endregion
 
+            protected override void OnModelCreating(ModelBuilder modelBuilder)
+            {
+            base.OnModelCreating(modelBuilder);
+
+            
+
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                ProductId = new Guid("2020849E-2EEE-4549-A964-4843D4496946"),
+                Name = "Samosa",
+                Price = 15,
+                Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
+                ImageUrl = "",
+                Category = "Appetizer"
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                ProductId = new Guid("6C77914C-34EA-4D5B-8917-FBEC96DA7711"),
+                Name = "Paneer Tikka",
+                Price = 13.99,
+                Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
+                ImageUrl = "",
+                Category = "Appetizer"
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                ProductId = new Guid("48D167ED-A297-4B96-BDA4-52E8F2A825D3"),
+                Name = "Sweet Pie",
+                Price = 10.99,
+                Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
+                ImageUrl = "",
+                Category = "Dessert"
+            });
+            modelBuilder.Entity<Product>().HasData(new Product
+            {
+                ProductId = new Guid("39641B44-9835-4C26-934F-E709CD5DE375"),
+                Name = "Pav Bhaji",
+                Price = 15,
+                Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
+                ImageUrl = "",
+                Category = "Entree"
+            });
+        }
     }
 }
