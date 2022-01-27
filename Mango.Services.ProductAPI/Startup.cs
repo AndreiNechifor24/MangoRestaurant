@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Mango.Services.ProductAPI.Repository.IRepositories;
+using Mango.Services.ProductAPI.Repository.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mango.Services.ProductAPI
@@ -48,17 +49,17 @@ namespace Mango.Services.ProductAPI
 
             #region Repositories
 
-                services.AddScoped<IProductRepository, IProductRepository>();
+                services.AddScoped<IProductRepository, ProductRepository>();
 
             #endregion
 
             #region AutoMapper
 
-            IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+                IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+                
                 services.AddSingleton(mapper);
                 services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-            #endregion
+                #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
