@@ -52,7 +52,7 @@ namespace Mango.Web.Services.Services
             {
                 CallType = StaticDetails.CallType.POST,
                 Data = model,
-                Url = StaticDetails.ProductAPIBase + $"/api/products/update",
+                Url = StaticDetails.ProductAPIBase + "/api/products/update",
                 AccessToken = ""
             });
         }

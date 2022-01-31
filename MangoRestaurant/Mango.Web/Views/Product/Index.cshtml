@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Mango.Web.Models.DTOs.ProductDto>
+
+<h1>Index</h1>
+<hr />
+@Html.ActionLink("Create product", "Create", "Product", "", new { @class = "btn btn-primary", style="margin-bottom: .5rem;" })
+
+
+<table class="table table-active">
+    <tr class="table-primary">
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Operation</th>
+
+    </tr>
+
+    @foreach (var product in Model)
+    {
+        <tr class="table-secondary">
+            <td>@product.ProductId</td>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+            <td>@product.Category</td>
+            <td>@product.Price</td>
+            <td>
+                @Html.ActionLink("Edit", "Update", "Product", new { productId = @product.ProductId }, new { @class = "btn btn-sm btn-warning" })
+                @Html.ActionLink("Delete", "Delete", "Product", new { productId = @product.ProductId }, new { @class = "btn btn-sm btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
+
