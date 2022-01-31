@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Mango.Web.Domain.DTOs;
+using Mango.Web.Models.DTOs;
 
 namespace Mango.Web.Services.IServices
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mango.Web.Domain.DTOs
+namespace Mango.Web.Models.DTOs
 {
     public class ResponseDto
     {

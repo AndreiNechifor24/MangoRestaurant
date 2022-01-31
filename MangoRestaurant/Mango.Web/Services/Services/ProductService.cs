@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Mango.Web.Domain;
-using Mango.Web.Domain.DTOs;
+using Mango.Web.Models;
+using Mango.Web.Models.DTOs;
 using Mango.Web.Services.IServices;
 
 namespace Mango.Web.Services.Services
@@ -51,7 +51,7 @@ namespace Mango.Web.Services.Services
             return await this.SendAsync<T>(new APIRequest()
             {
                 CallType = StaticDetails.CallType.POST,
-                Data = model
+                Data = model,
                 Url = StaticDetails.ProductAPIBase + $"/api/products/update",
                 AccessToken = ""
             });

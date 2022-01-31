@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mango.Web.Domain.DTOs
+namespace Mango.Web.Models.DTOs
 {
     public class ProductDto
     {

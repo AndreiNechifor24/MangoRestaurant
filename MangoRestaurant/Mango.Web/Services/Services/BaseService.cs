@@ -4,8 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Mango.Web.Domain;
-using Mango.Web.Domain.DTOs;
+using Mango.Web.Models;
+using Mango.Web.Models.DTOs;
 using Mango.Web.Services.IServices;
 using Newtonsoft.Json;
 

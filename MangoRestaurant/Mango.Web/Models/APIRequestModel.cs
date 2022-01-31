@@ -1,7 +1,7 @@
 ﻿using System;
 using static Mango.Web.StaticDetails;
 
-namespace Mango.Web.Domain
+namespace Mango.Web.Models
 {
     public class APIRequest
     {
