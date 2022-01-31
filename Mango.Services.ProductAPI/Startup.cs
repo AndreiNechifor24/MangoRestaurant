@@ -15,6 +15,10 @@ using AutoMapper;
 using Mango.Services.ProductAPI.Repository.IRepositories;
 using Mango.Services.ProductAPI.Repository.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Azure;
+using Azure.Storage.Queues;
+using Azure.Storage.Blobs;
+using Azure.Core.Extensions;
 
 namespace Mango.Services.ProductAPI
 {
@@ -59,7 +63,12 @@ namespace Mango.Services.ProductAPI
                 
                 services.AddSingleton(mapper);
                 services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-                #endregion
+            services.AddAzureClients(builder =>
+            {
+                builder.AddBlobServiceClient(Configuration["ConnectionStrings:DevStorageConn:blob"], preferMsi: true);
+                builder.AddQueueServiceClient(Configuration["ConnectionStrings:DevStorageConn:queue"], preferMsi: true);
+            });
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,6 +91,31 @@ namespace Mango.Services.ProductAPI
             {
                 endpoints.MapControllers();
             });
+        }
+    }
+    internal static class StartupExtensions
+    {
+        public static IAzureClientBuilder<BlobServiceClient, BlobClientOptions> AddBlobServiceClient(this AzureClientFactoryBuilder builder, string serviceUriOrConnectionString, bool preferMsi)
+        {
+            if (preferMsi && Uri.TryCreate(serviceUriOrConnectionString, UriKind.Absolute, out Uri serviceUri))
+            {
+                return builder.AddBlobServiceClient(serviceUri);
+            }
+            else
+            {
+                return builder.AddBlobServiceClient(serviceUriOrConnectionString);
+            }
+        }
+        public static IAzureClientBuilder<QueueServiceClient, QueueClientOptions> AddQueueServiceClient(this AzureClientFactoryBuilder builder, string serviceUriOrConnectionString, bool preferMsi)
+        {
+            if (preferMsi && Uri.TryCreate(serviceUriOrConnectionString, UriKind.Absolute, out Uri serviceUri))
+            {
+                return builder.AddQueueServiceClient(serviceUri);
+            }
+            else
+            {
+                return builder.AddQueueServiceClient(serviceUriOrConnectionString);
+            }
         }
     }
 }
