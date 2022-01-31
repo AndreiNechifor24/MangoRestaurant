@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Mango.Web.Services.IServices;
+using Mango.Web.Services.Services;
 
 namespace Mango.Web
 {
@@ -24,6 +26,19 @@ namespace Mango.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            #region MicroServicesInit
+
+                #region ProductsService
+
+                    StaticDetails.ProductAPIBase = Configuration["ServiceUrls:ProductAPI"];
+                    services.AddHttpClient<IProductService, ProductService>();
+                    services.AddScoped<IProductService, ProductService>();
+
+                #endregion
+
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
