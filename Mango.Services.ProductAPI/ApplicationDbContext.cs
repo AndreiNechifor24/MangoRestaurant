@@ -32,7 +32,7 @@ namespace Mango.Services.ProductAPI
                 Name = "Samosa",
                 Price = 15,
                 Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "http://127.0.0.1:10001/devstoreaccount1/mango/11.jpg",
+                ImageUrl = "http://127.0.0.1:10000/devstoreaccount1/mango/11.jpg",
                 Category = "Appetizer"
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -41,7 +41,7 @@ namespace Mango.Services.ProductAPI
                 Name = "Paneer Tikka",
                 Price = 13.99,
                 Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "http://127.0.0.1:10001/devstoreaccount1/mango/12.jpg",
+                ImageUrl = "http://127.0.0.1:10000/devstoreaccount1/mango/12.jpg",
                 Category = "Appetizer"
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -50,7 +50,7 @@ namespace Mango.Services.ProductAPI
                 Name = "Sweet Pie",
                 Price = 10.99,
                 Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "http://127.0.0.1:10001/devstoreaccount1/mango/13.jpg",
+                ImageUrl = "http://127.0.0.1:10000/devstoreaccount1/mango/13.jpg",
                 Category = "Dessert"
             });
             modelBuilder.Entity<Product>().HasData(new Product
@@ -59,7 +59,7 @@ namespace Mango.Services.ProductAPI
                 Name = "Pav Bhaji",
                 Price = 15,
                 Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                ImageUrl = "http://127.0.0.1:10001/devstoreaccount1/mango/14.jpg",
+                ImageUrl = "http://127.0.0.1:10000/devstoreaccount1/mango/14.jpg",
                 Category = "Entree"
             });
         }

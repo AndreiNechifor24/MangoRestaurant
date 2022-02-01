@@ -4,14 +4,16 @@ using Mango.Services.ProductAPI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Mango.Services.ProductAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220201094301_init database on local2")]
+    partial class initdatabaseonlocal2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +53,7 @@ namespace Mango.Services.ProductAPI.Migrations
                             ProductId = new Guid("2020849e-2eee-4549-a964-4843d4496946"),
                             Category = "Appetizer",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                            ImageUrl = "http://127.0.0.1:10000/devstoreaccount1/mango/11.jpg",
+                            ImageUrl = "http://127.0.0.1:10001/devstoreaccount1/mango/11.jpg",
                             Name = "Samosa",
                             Price = 15.0
                         },
@@ -60,7 +62,7 @@ namespace Mango.Services.ProductAPI.Migrations
                             ProductId = new Guid("6c77914c-34ea-4d5b-8917-fbec96da7711"),
                             Category = "Appetizer",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                            ImageUrl = "http://127.0.0.1:10000/devstoreaccount1/mango/12.jpg",
+                            ImageUrl = "http://127.0.0.1:10001/devstoreaccount1/mango/12.jpg",
                             Name = "Paneer Tikka",
                             Price = 13.99
                         },
@@ -69,7 +71,7 @@ namespace Mango.Services.ProductAPI.Migrations
                             ProductId = new Guid("48d167ed-a297-4b96-bda4-52e8f2a825d3"),
                             Category = "Dessert",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                            ImageUrl = "http://127.0.0.1:10000/devstoreaccount1/mango/13.jpg",
+                            ImageUrl = "http://127.0.0.1:10001/devstoreaccount1/mango/13.jpg",
                             Name = "Sweet Pie",
                             Price = 10.99
                         },
@@ -78,7 +80,7 @@ namespace Mango.Services.ProductAPI.Migrations
                             ProductId = new Guid("39641b44-9835-4c26-934f-e709cd5de375"),
                             Category = "Entree",
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
-                            ImageUrl = "http://127.0.0.1:10000/devstoreaccount1/mango/14.jpg",
+                            ImageUrl = "http://127.0.0.1:10001/devstoreaccount1/mango/14.jpg",
                             Name = "Pav Bhaji",
                             Price = 15.0
                         });

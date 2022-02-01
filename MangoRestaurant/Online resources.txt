@@ -1,0 +1,3 @@
+This file lists some usefull resources found online, during dev & learning process:
+
+	1) How to add image to table in HTML -> https://en.number13.de/adding-pictures-to-a-html-table/
